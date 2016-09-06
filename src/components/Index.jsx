@@ -40,6 +40,9 @@ class Index extends Component {
         <div style={{backgroundImage: 'url(' + require('../assets/image/detail_bg.png') + ')'}}></div>
         <div style={{backgroundImage: 'url(' + require('../assets/image/project_0.png') + ')'}}></div>
         <div style={{backgroundImage: 'url(' + require('../assets/image/project_1.png') + ')'}}></div>
+        <div style={{backgroundImage: 'url(' + require('../assets/image/product_bg.png') + ')'}}></div>
+        <div style={{backgroundImage: 'url(' + require('../assets/image/sport_bg.png') + ')'}}></div>
+        <div style={{backgroundImage: 'url(' + require('../assets/image/economic_bg.png') + ')'}}></div>
       </div>
     )
   }

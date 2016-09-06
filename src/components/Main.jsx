@@ -33,6 +33,8 @@ class Main extends Component {
       url = '/project'
     } else if(index == 1) {
       url = '/sport'
+    } else if(index == 2) {
+      url = '/product'
     } else if(index == 3) {
       url = '/economic'
     } else if(index == 4) {

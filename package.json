@@ -13,13 +13,14 @@
     "isomorphic-fetch": "^2.2.1",
     "js-cookie": "^2.1.1",
     "react": "^15.3.0",
+    "react-addons-css-transition-group": "^15.3.1",
     "react-dom": "^15.3.0",
+    "react-html5video": "^1.2.12",
     "react-redux": "^4.4.5",
     "react-router": "^2.6.1",
     "redux": "^3.5.2",
     "reqwest": "^2.0.5",
-    "swiper": "^3.3.1",
-    "react-html5video": "^1.2.12"
+    "swiper": "^3.3.1"
   },
   "devDependencies": {
     "atool-test-mocha": "^0.1.4",
