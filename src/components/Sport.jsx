@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router'
+import QueueAnim from 'rc-queue-anim'
 import styles from './Sport.less'
 
 class Sport extends Component {
@@ -37,8 +38,11 @@ class Sport extends Component {
   render() {
     return (
     	<div className={styles.bg}>
-        <div className={styles.close} onClick={this.onClickClose.bind(this)}></div>
-        <div className={styles.menu} onClick={this.onClickMenu.bind(this)}></div>
+        <QueueAnim>
+          <div key="0" className={styles.close} onClick={this.onClickClose.bind(this)}></div>
+          <div key="1" className={styles.title}></div>
+          <div key="2" className={styles.menu} onClick={this.onClickMenu.bind(this)}></div>
+        </QueueAnim>
       </div>
     )
   }

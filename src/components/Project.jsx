@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router'
+import QueueAnim from 'rc-queue-anim'
 import styles from './Project.less'
 
 import Swiper from 'swiper'
@@ -15,10 +16,12 @@ class Project extends Component {
   }
 
   componentDidMount() {
-    swiper = new Swiper('.swiper-container-2', {
-      pagination: '.swiper-pagination',
-      loop: true
-    })
+    setTimeout(function() {
+      swiper = new Swiper('.swiper-container-2', {
+        pagination: '.swiper-pagination',
+        loop: true
+      })
+    }, 500)
   }
 
   componentWillUnmount() {
@@ -62,21 +65,27 @@ class Project extends Component {
   render() {
     return (
     	<div className={styles.bg}>
-        <div className="swiper-container-2">
-          <div className="swiper-wrapper">
-            <div className="swiper-slide">
-              <img src={require('../assets/image/project_0.png')} style={{width: '100%'}} />
+        <QueueAnim>
+          <div key="0" className={styles.menu} onClick={this.onClickMenu.bind(this)}></div>
+
+          <div key="1" className={styles.left} onClick={this.onClickLeft.bind(this)}></div>
+
+          <div key="2" className="swiper-container-2">
+            <div className="swiper-wrapper">
+              <div className="swiper-slide">
+                <img src={require('../assets/image/project_0.png')} style={{width: '100%'}} />
+              </div>
+              <div className="swiper-slide">
+                <img src={require('../assets/image/project_1.png')} style={{width: '100%'}} />
+              </div>
             </div>
-            <div className="swiper-slide">
-              <img src={require('../assets/image/project_1.png')} style={{width: '100%'}} />
-            </div>
+            <div className="swiper-pagination"></div>
           </div>
-          <div className="swiper-pagination"></div>
-        </div>
-        <div className={styles.close} onClick={this.onClickClose.bind(this)}></div>
-        <div className={styles.menu} onClick={this.onClickMenu.bind(this)}></div>
-        <div className={styles.left} onClick={this.onClickLeft.bind(this)}></div>
-        <div className={styles.right} onClick={this.onClickRight.bind(this)}></div>
+
+          <div key="3" className={styles.right} onClick={this.onClickRight.bind(this)}></div>
+
+          <div key="4" className={styles.close} onClick={this.onClickClose.bind(this)}></div>
+        </QueueAnim>
       </div>
     )
   }

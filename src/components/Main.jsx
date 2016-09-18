@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router'
+import QueueAnim from 'rc-queue-anim'
 import styles from './Main.less'
 
 let index = 0
@@ -52,13 +53,15 @@ class Main extends Component {
   render() {
     return (
     	<div className={styles.bg}>
-        <div className={styles.menu} style={{backgroundImage: 'url(' + require('../assets/image/main_menu_' + this.state.index + '.png') + ')'}}>
-          <div className={styles.menu_0} onClick={this.onClickMenu.bind(this, 0)}></div>
-          <div className={styles.menu_1} onClick={this.onClickMenu.bind(this, 1)}></div>
-          <div className={styles.menu_2} onClick={this.onClickMenu.bind(this, 2)}></div>
-          <div className={styles.menu_3} onClick={this.onClickMenu.bind(this, 3)}></div>
-          <div className={styles.menu_4} onClick={this.onClickMenu.bind(this, 4)}></div>
-        </div>
+        <QueueAnim>
+          <div key="0" className={styles.menu} style={{backgroundImage: 'url(' + require('../assets/image/main_menu_' + this.state.index + '.png') + ')'}}>
+            <div className={styles.menu_0} onClick={this.onClickMenu.bind(this, 0)}></div>
+            <div className={styles.menu_1} onClick={this.onClickMenu.bind(this, 1)}></div>
+            <div className={styles.menu_2} onClick={this.onClickMenu.bind(this, 2)}></div>
+            <div className={styles.menu_3} onClick={this.onClickMenu.bind(this, 3)}></div>
+            <div className={styles.menu_4} onClick={this.onClickMenu.bind(this, 4)}></div>
+          </div>
+        </QueueAnim>
       </div>
     )
   }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router'
 import { default as Video, Controls, Play, Mute, Seek, Fullscreen, Time, Overlay } from 'react-html5video'
+import QueueAnim from 'rc-queue-anim'
 
 import styles from './Video.less'
 import 'react-html5video/dist/ReactHtml5Video.css'
@@ -49,18 +50,22 @@ class VideoComponent extends Component {
   render() {
     return (
     	<div className={styles.bg}>
-        <Video controls autoPlay loop muted ref="video" className={styles.video}>
-            <source src={videos[0]} type="video/mp4" />
-            <Controls>
-                <Play />
-                <Seek />
-                <Time />
-                <Mute />
-                <Fullscreen />
-            </Controls>
-        </Video>
-        <div className={styles.close} onClick={this.onClickClose.bind(this)}></div>
-        <div className={styles.menu} onClick={this.onClickMenu.bind(this)}></div>
+        <QueueAnim>
+          <div key="0" className={styles.menu} onClick={this.onClickMenu.bind(this)}></div>
+
+          <Video key="1" controls autoPlay loop muted ref="video" className={styles.video}>
+              <source src={videos[0]} type="video/mp4" />
+              <Controls>
+                  <Play />
+                  <Seek />
+                  <Time />
+                  <Mute />
+                  <Fullscreen />
+              </Controls>
+          </Video>
+
+          <div key="2" className={styles.close} onClick={this.onClickClose.bind(this)}></div>
+        </QueueAnim>
       </div>
     )
   }
