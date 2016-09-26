@@ -6,15 +6,6 @@ import QueueAnim from 'rc-queue-anim'
 import styles from './Video.less'
 import 'react-html5video/dist/ReactHtml5Video.css'
 
-let videos = [
-    // TODO: Don't hot link these. upload them somewhere.
-    'http://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_480p_h264.mov',
-    'http://media.w3.org/2010/05/sintel/trailer.mp4',
-    'http://media.w3.org/2010/05/video/movie_300.mp4',
-    // Purposefully not a video to deomnstrate source error state
-    'https://github.com/mderrick/react-html5video'
-]
-
 class VideoComponent extends Component {
 
   constructor(props) {
@@ -54,7 +45,7 @@ class VideoComponent extends Component {
           <div key="0" className={styles.menu} onClick={this.onClickMenu.bind(this)}></div>
 
           <Video key="1" controls autoPlay loop muted ref="video" className={styles.video}>
-              <source src={videos[0]} type="video/mp4" />
+              <source src="sport.mp4" type="video/mp4" />
               <Controls>
                   <Play />
                   <Seek />

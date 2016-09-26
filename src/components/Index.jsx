@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router'
+import QueueAnim from 'rc-queue-anim'
 import styles from './Index.less'
 
 class Index extends Component {
@@ -26,7 +27,12 @@ class Index extends Component {
   render() {
     return (
     	<div className={styles.bg}>
-        <div className={styles.menu_0} onClick={this.onClickMenu.bind(this)}></div>
+        <QueueAnim>
+          <div key="0" className={styles.logo}></div>
+          <div key="1" className={styles.text}></div>
+          <div key="2" className={styles.menu_0} onClick={this.onClickMenu.bind(this)}></div>
+          <div key="3" className={styles.address}></div>
+        </QueueAnim>
         <div style={{backgroundImage: 'url(' + require('../assets/image/main_bg.png') + ')'}}></div>
         <div style={{backgroundImage: 'url(' + require('../assets/image/index_bg.png') + ')'}}></div>
         <div style={{backgroundImage: 'url(' + require('../assets/image/main_menu_0.png') + ')'}}></div>
@@ -62,6 +68,8 @@ class Index extends Component {
         <div style={{backgroundImage: 'url(' + require('../assets/image/sport_title.png') + ')'}}></div>
         <div style={{backgroundImage: 'url(' + require('../assets/image/economic_title.png') + ')'}}></div>
         <div style={{backgroundImage: 'url(' + require('../assets/image/economic_content.png') + ')'}}></div>
+        <div style={{backgroundImage: 'url(' + require('../assets/image/main_logo.png') + ')'}}></div>
+        <div style={{backgroundImage: 'url(' + require('../assets/image/main_sport.png') + ')'}}></div>
       </div>
     )
   }

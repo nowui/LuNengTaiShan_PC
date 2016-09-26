@@ -42,8 +42,9 @@ class Economic extends Component {
         <QueueAnim>
           <div key="0" className={styles.menu} onClick={this.onClickMenu.bind(this)}></div>
           <div key="1" className={styles.title}></div>
-          <div key="2" className={styles.content}></div>
-          <div key="3" className={styles.close} onClick={this.onClickClose.bind(this)}></div>
+          <div key="2" className={styles.text}></div>
+          <div key="3" className={styles.content}></div>
+          <div key="4" className={styles.close} onClick={this.onClickClose.bind(this)}></div>
         </QueueAnim>
       </div>
     )
