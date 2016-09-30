@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router'
-import { default as Video, Controls, Play, Mute, Seek, Fullscreen, Time, Overlay } from 'react-html5video'
+import { default as Video, Controls, Play, Mute, Seek, Fullscreen, Overlay } from 'react-html5video'
 import QueueAnim from 'rc-queue-anim'
 
 import styles from './Video.less'
@@ -20,7 +20,7 @@ class VideoComponent extends Component {
     event.preventDefault()
 
     this.props.router.push({
-      pathname: '/index',
+      pathname: '/main',
       query: {
 
       }
@@ -41,15 +41,14 @@ class VideoComponent extends Component {
   render() {
     return (
     	<div className={styles.bg}>
-        <QueueAnim>
+        <QueueAnim duration={1000} interval={500} animConfig={{opacity:[1, 0],translateX:[0, 100]}}>
           <div key="0" className={styles.menu} onClick={this.onClickMenu.bind(this)}></div>
 
-          <Video key="1" controls autoPlay loop muted ref="video" className={styles.video}>
-              <source src="sport.mp4" type="video/mp4" />
+          <Video controls autoPlay loop muted ref="video" className={styles.video}>
+              <source src="video.ogg" type="video/ogg" />
               <Controls>
                   <Play />
                   <Seek />
-                  <Time />
                   <Mute />
                   <Fullscreen />
               </Controls>

@@ -3,15 +3,13 @@ import { withRouter } from 'react-router'
 import QueueAnim from 'rc-queue-anim'
 import styles from './Main.less'
 
-let index = 0
-
 class Main extends Component {
 
   constructor(props) {
     super(props)
 
     this.state = {
-      index: index
+      index: -1
     }
   }
 
@@ -22,23 +20,17 @@ class Main extends Component {
   onClickMenu(id) {
     event.preventDefault()
 
-    index = id
-
-    this.setState({
-      index: index
-    })
-
     let url = '/project'
 
-    if(index == 0) {
+    if(id == 0) {
       url = '/project'
-    } else if(index == 1) {
+    } else if(id == 1) {
       url = '/sport'
-    } else if(index == 2) {
+    } else if(id == 2) {
       url = '/product'
-    } else if(index == 3) {
+    } else if(id == 3) {
       url = '/economic'
-    } else if(index == 4) {
+    } else if(id == 4) {
       url = '/video'
     }
 
@@ -50,17 +42,39 @@ class Main extends Component {
     })
   }
 
+  onMouseOver(id) {
+    this.setState({
+      index: id
+    })
+  }
+
+  onMouseOut() {
+    this.setState({
+      index: -1
+    })
+  }
+
   render() {
     return (
     	<div className={styles.bg}>
-        <QueueAnim>
-          <div key="0" className={styles.sport}></div>
+        <QueueAnim duration={1000} interval={500} animConfig={{opacity:[1, 0],translateX:[0, 100]}}>
+          <div key="0" className={styles.sport}>
+            <div className={styles.lint_0}></div>
+            <div className={styles.lint_1}></div>
+            <div className={styles.lint_2}></div>
+            <div className={styles.lint_3}></div>
+            <div className={styles.sprite_0}></div>
+            <div className={styles.sprite_1}></div>
+            <div className={styles.sprite_2}></div>
+            <div className={styles.sprite_3}></div>
+            <div className={styles.sprite_4}></div>
+          </div>
           <div key="1" className={styles.menu} style={{backgroundImage: 'url(' + require('../assets/image/main_menu_' + this.state.index + '.png') + ')'}}>
-            <div className={styles.menu_0} onClick={this.onClickMenu.bind(this, 0)}></div>
-            <div className={styles.menu_1} onClick={this.onClickMenu.bind(this, 1)}></div>
-            <div className={styles.menu_2} onClick={this.onClickMenu.bind(this, 2)}></div>
-            <div className={styles.menu_3} onClick={this.onClickMenu.bind(this, 3)}></div>
-            <div className={styles.menu_4} onClick={this.onClickMenu.bind(this, 4)}></div>
+            <div className={styles.menu_0} onMouseOver={this.onMouseOver.bind(this, 0)} onMouseOut={this.onMouseOut.bind(this)} onClick={this.onClickMenu.bind(this, 0)}></div>
+            <div className={styles.menu_1} onMouseOver={this.onMouseOver.bind(this, 1)} onMouseOut={this.onMouseOut.bind(this)} onClick={this.onClickMenu.bind(this, 1)}></div>
+            <div className={styles.menu_2} onMouseOver={this.onMouseOver.bind(this, 2)} onMouseOut={this.onMouseOut.bind(this)} onClick={this.onClickMenu.bind(this, 2)}></div>
+            <div className={styles.menu_3} onMouseOver={this.onMouseOver.bind(this, 3)} onMouseOut={this.onMouseOut.bind(this)} onClick={this.onClickMenu.bind(this, 3)}></div>
+            <div className={styles.menu_4} onMouseOver={this.onMouseOver.bind(this, 4)} onMouseOut={this.onMouseOut.bind(this)} onClick={this.onClickMenu.bind(this, 4)}></div>
           </div>
           <div key="2" className={styles.logo}></div>
         </QueueAnim>

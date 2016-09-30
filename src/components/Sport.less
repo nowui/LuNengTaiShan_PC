@@ -1,22 +1,13 @@
 .bg {
     width: 1920px;
     height: 1080px;
-    background-image: url("../assets/image/sport_bg.png");
-    background-repeat: no-repeat;
-}
-
-.title {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    width: 324px;
-    height: 163px;
-    background-image: url("../assets/image/sport_title.png");
+    background-image: url("../assets/image/detail_bg.png");
     background-repeat: no-repeat;
 }
 
 .close {
     position: absolute;
+    z-index: 999;
     right: 0px;
     top: 0px;
     width: 100px;
@@ -28,6 +19,7 @@
 
 .menu {
     position: absolute;
+    z-index: 999;
     left: 10px;
     bottom: 10px;
     width: 150px;
@@ -35,4 +27,138 @@
     cursor: pointer;
     background-image: url("../assets/image/button_menu.png");
     background-repeat: no-repeat;
+}
+
+.left {
+    position: absolute;
+    z-index: 999;
+    left: 60px;
+    top: 490px;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    background-image: url("../assets/image/button_left.png");
+    background-repeat: no-repeat;
+}
+
+.right {
+    position: absolute;
+    z-index: 999;
+    right: 60px;
+    top: 490px;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    background-image: url("../assets/image/button_right.png");
+    background-repeat: no-repeat;
+}
+
+.title_0_animation {
+    position: absolute;
+    z-index: 999;
+    left: 100px;
+    top: 0px;
+    width: 380px;
+    height: 190px;
+    background-image: url("../assets/image/sport_0_title.png");
+    background-repeat: no-repeat;
+    opacity: 0;
+    -webkit-animation: show 0.5s linear;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-delay: 0s;
+}
+
+.title_1_animation {
+    position: absolute;
+    z-index: 999;
+    left: 100px;
+    top: 0px;
+    width: 380px;
+    height: 190px;
+    background-image: url("../assets/image/sport_1_title.png");
+    background-repeat: no-repeat;
+    opacity: 0;
+    -webkit-animation: show 0.5s linear;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-delay: 0s;
+}
+
+.title_2_animation {
+    position: absolute;
+    z-index: 999;
+    left: 100px;
+    top: 0px;
+    width: 380px;
+    height: 190px;
+    background-image: url("../assets/image/sport_2_title.png");
+    background-repeat: no-repeat;
+    opacity: 0;
+    -webkit-animation: show 0.5s linear;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-delay: 0s;
+}
+
+.title_3_animation {
+    position: absolute;
+    z-index: 999;
+    left: 100px;
+    top: 0px;
+    width: 380px;
+    height: 190px;
+    background-image: url("../assets/image/sport_3_title.png");
+    background-repeat: no-repeat;
+    opacity: 0;
+    -webkit-animation: show 0.5s linear;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-delay: 0s;
+}
+
+.text_1_animation {
+    position: absolute;
+    z-index: 999;
+    left: 254px;
+    top: 641px;
+    width: 595px;
+    height: 133px;
+    background-image: url("../assets/image/sport_1_text.png");
+    background-repeat: no-repeat;
+    opacity: 0;
+    -webkit-animation: show 0.5s linear;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-delay: 0.5s;
+}
+
+.text_2_animation {
+    position: absolute;
+    z-index: 999;
+    left: 256px;
+    top: 305px;
+    width: 533px;
+    height: 84px;
+    background-image: url("../assets/image/sport_2_text.png");
+    background-repeat: no-repeat;
+    opacity: 0;
+    -webkit-animation: show 0.5s linear;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-delay: 0.5s;
+}
+
+.text_3_animation {
+    position: absolute;
+    z-index: 999;
+    left: 253px;
+    top: 627px;
+    width: 637px;
+    height: 139px;
+    background-image: url("../assets/image/sport_3_text.png");
+    background-repeat: no-repeat;
+    opacity: 0;
+    -webkit-animation: show 0.5s linear;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-delay: 0.5s;
+}
+
+@-webkit-keyframes show {
+    0% { opacity: 0; transform: translate(0px); }
+    100% { opacity: 1; transform: translate(-100px); }
 }

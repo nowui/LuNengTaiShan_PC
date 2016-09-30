@@ -18,7 +18,7 @@ class Economic extends Component {
     event.preventDefault()
 
     this.props.router.push({
-      pathname: '/index',
+      pathname: '/main',
       query: {
 
       }
@@ -39,12 +39,13 @@ class Economic extends Component {
   render() {
     return (
     	<div className={styles.bg}>
-        <QueueAnim>
+        <QueueAnim duration={1000} interval={250} animConfig={{opacity:[1, 0],translateX:[0, 100]}}>
           <div key="0" className={styles.menu} onClick={this.onClickMenu.bind(this)}></div>
           <div key="1" className={styles.title}></div>
           <div key="2" className={styles.text}></div>
           <div key="3" className={styles.content}></div>
-          <div key="4" className={styles.close} onClick={this.onClickClose.bind(this)}></div>
+          <div key="4" className={styles.note}></div>
+          <div key="5" className={styles.close} onClick={this.onClickClose.bind(this)}></div>
         </QueueAnim>
       </div>
     )

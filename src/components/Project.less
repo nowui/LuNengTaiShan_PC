@@ -18,6 +18,7 @@
 
 .menu {
     position: absolute;
+    z-index: 999;
     left: 10px;
     bottom: 10px;
     width: 150px;
@@ -47,4 +48,99 @@
     cursor: pointer;
     background-image: url("../assets/image/button_right.png");
     background-repeat: no-repeat;
+}
+
+.circle_0 {
+    position: absolute;
+    left: 562px;
+    top: 282px;
+    width: 557px;
+    height: 557px;
+    background-image: url("../assets/image/project_circle_0.png");
+    background-repeat: no-repeat;
+    -webkit-animation: circle 60s infinite linear;
+}
+
+.circle_1 {
+    position: absolute;
+    left: 126px;
+    top: 648px;
+    width: 273px;
+    height: 273px;
+    background-image: url("../assets/image/project_circle_1.png");
+    background-repeat: no-repeat;
+    -webkit-animation: circle 30s infinite linear;
+}
+
+.circle_2 {
+    position: absolute;
+    left: 375px;
+    top: 712px;
+    width: 183px;
+    height: 183px;
+    background-image: url("../assets/image/project_circle_2.png");
+    background-repeat: no-repeat;
+    -webkit-animation: circle 30s infinite linear;
+}
+
+.circle_3 {
+    position: absolute;
+    left: 280px;
+    top: 523px;
+    width: 223px;
+    height: 223px;
+    background-image: url("../assets/image/project_circle_3.png");
+    background-repeat: no-repeat;
+    -webkit-animation: circle 30s infinite linear;
+}
+
+.circle_div_4 {
+    position: absolute;
+    left: 1416px;
+    top: 332px;
+    width: 128px;
+    height: 223px;
+    overflow: hidden;
+}
+
+.circle_4 {
+    width: 223px;
+    height: 223px;
+    background-image: url("../assets/image/project_circle_3.png");
+    background-repeat: no-repeat;
+    -webkit-animation: circle 30s infinite linear;
+}
+
+.logo {
+    position: absolute;
+    left: 825px;
+    top: 420px;
+    width: 136px;
+    height: 76px;
+    cursor: pointer;
+}
+
+.text_1_animation {
+    position: absolute;
+    z-index: 999;
+    left: 285px;
+    top: 209px;
+    width: 646px;
+    height: 148px;
+    background-image: url("../assets/image/project_1_text.png");
+    background-repeat: no-repeat;
+    opacity: 0;
+    -webkit-animation: show 0.5s linear;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-delay: 0s;
+}
+
+@-webkit-keyframes show {
+    0% { opacity: 0; transform: translate(0px); }
+    100% { opacity: 1; transform: translate(-100px); }
+}
+
+@-webkit-keyframes circle{
+    0%{ transform:rotate(0deg); }
+    100%{ transform:rotate(-360deg); }
 }
