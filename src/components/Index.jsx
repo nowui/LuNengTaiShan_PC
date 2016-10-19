@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router'
+import { Modal } from 'antd'
 import QueueAnim from 'rc-queue-anim'
 import styles from './Index.less'
 
@@ -16,12 +17,22 @@ class Index extends Component {
   onClickMenu(index) {
     event.preventDefault()
 
-    this.props.router.push({
-      pathname: '/main',
-      query: {
+    let current = new Date("2016/10/27 00:00:00")
+    let now = new Date()
 
-      }
-    })
+    if(Date.parse(current) > Date.parse(now)) {
+        this.props.router.push({
+          pathname: '/main',
+          query: {
+
+          }
+        })
+    } else {
+        Modal.error({
+            title: '系统提示',
+            content: '授权已经过期',
+        })
+    }
   }
 
   render() {
