@@ -17,7 +17,7 @@ class Index extends Component {
   onClickMenu(index) {
     event.preventDefault()
 
-    let current = new Date("2016/10/27 00:00:00")
+    let current = new Date("2016/11/30 00:00:00")
     let now = new Date()
 
     if(Date.parse(current) > Date.parse(now)) {
